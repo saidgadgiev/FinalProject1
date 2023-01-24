@@ -12,5 +12,6 @@ num_rand = random.randint(3,10)
 
 list = Add_Array(num_rand)
 print("*"*20)
-number_rand = random.randint(0,3)
-print(list," -> ", random.sample(list, number_rand))
+# Количество элементов для отбора
+number_rand = random.randint(0,3) # Случайный выбор цифр от 0 до 3 
+print(list," -> ", random.sample(list, number_rand)) # Вывод массива из случайных элементов другого массива
