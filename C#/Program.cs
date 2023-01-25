@@ -8,9 +8,7 @@ String[] InitArray(int num)
     {
         Console.Write($"Введите {i+1}-й элемент массива -> ");
         list[i] = Console.ReadLine()??"";
-        // Console.WriteLine(list[i]);
     }
-    // Console.Write("]");
     return list;
 }
 
@@ -31,7 +29,6 @@ void FinalArray(string[] array)
 {
     Random rnd = new Random();
     int number = rnd.Next(0,4);
-    // string[] list = new string[number];
     Console.Write("[");
     for (int i = 0; i < number; i++)
     {
