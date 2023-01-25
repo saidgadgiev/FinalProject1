@@ -7,7 +7,7 @@ String[] InitArray(int num)
     for (int i = 0; i < num; i++)
     {
         Console.Write($"Введите {i+1}-й элемент массива -> ");
-        list[i] = Console.ReadLine();
+        list[i] = Console.ReadLine()??"";
         // Console.WriteLine(list[i]);
     }
     // Console.Write("]");
