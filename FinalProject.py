@@ -1,5 +1,5 @@
 import random
-#  Создание массива
+#  Функция Создание массива
 def Add_Array():
     num = random.randint(3,10)
     array=[]
