@@ -1,18 +1,4 @@
-﻿// Ввести размер массива
-
-int CorrectNumber(string message)
-{
-    bool isCorrect = false;
-    int result = 0;
-    while(! isCorrect)
-    {
-        Console.Write(message);
-        if (int.TryParse(Console.ReadLine(), out result)) isCorrect = true;
-        else Console.WriteLine("Enter correct number");
-    }
-    return result;
-}
-
+﻿
 // Получить массив из случайных чисел
 
 String[] InitArray(int num)
@@ -54,7 +40,10 @@ void FinalArray(string[] array)
     }
     Console.Write("]");
 }
-int num = CorrectNumber("Введите длинну строкового массива не больше 10 -> ");
+
+Random rnd = new Random();
+int num = rnd.Next(3,10); // Случайное число для размера массива
+Console.WriteLine($"Длинна массива будет равна {num} эле. ");
 string[] array = InitArray(num);
 PrintArray(array);
 Console.Write(" -> ");
