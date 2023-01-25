@@ -31,7 +31,7 @@ void FinalArray(string[] array)
 {
     Random rnd = new Random();
     int number = rnd.Next(0,4);
-    string[] list = new string[number];
+    // string[] list = new string[number];
     Console.Write("[");
     for (int i = 0; i < number; i++)
     {
