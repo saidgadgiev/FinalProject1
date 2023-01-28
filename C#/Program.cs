@@ -48,9 +48,8 @@ void FinalArray(string[] array)
     Console.Write("]");
 }
 
-Random rnd = new Random();
-int num = rnd.Next(3,10); // Случайное число для размера массива
-Console.WriteLine($"Длинна массива будет равна {num} эле. ");
+Console.Write("Укажите длинну массива?? -> ");
+int num  = int.Parse(Console.ReadLine()??""); //вводим размер массива
 string[] array = InitArray(num);
 PrintArray(array);
 Console.Write(" -> ");
