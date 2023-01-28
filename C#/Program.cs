@@ -1,4 +1,4 @@
-﻿/*
+/*
 Задача: 
 Написать программу, которая из имеющегося массива строк формирует массив из строк, 
 длина которых меньше либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, 
@@ -9,7 +9,9 @@
     ["1234", "1567", "-2", "computer science"] -> ["-2"]
     ["Russia", "Denmark", "Kazan"] -> []
 */
-// Получить массив из случайных чисел
+
+
+// Ввести с клавиатура элементы массива и создание массива
 
 String[] InitArray(int num)
 {
@@ -34,24 +36,43 @@ void PrintArray(string[] array)
     Console.Write("]");
 }    
 
-//  Создание случайного  массива из сущ массива
-void FinalArray(string[] array)
+// Перебор элементов в массиве и проверка какое
+// количество элементов в массиве удовлетворяющее условию задачи
+int SimvolArray(string[] array) 
 {
-    Random rnd = new Random();
-    int number = rnd.Next(0,4);
-    Console.Write("[");
-    for (int i = 0; i < number; i++)
+    int maxElements = 3;
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        int num = rnd.Next(0,array.Length);
-        Console.Write("\""+array[num]+"\"" + (i < number-1 ?", ":""));
+	    if(array[i].Length <= maxElements){
+		    count++;
+	    }   
     }
-    Console.Write("]");
+    return count;
+}
+//  Создание второго  массива из сущ массива, удовлетворяющее условию задачи
+String[] FinalArray(string[] array, int num)
+{
+    string[] arr = new string[num]; // Создает второй пустой массив
+    int maxElements = 3;
+    int count = 0;
+    for (int i = 0; i < array.Length; i++) 
+    {
+        if(array[i].Length <= maxElements) // условиче чтоб кол символов не превышало 3
+        {
+            arr[count] = array[i];
+            count++;
+        }
+    }
+    return arr;
 }
 
 Console.Write("Укажите длинну массива?? -> ");
 int num  = int.Parse(Console.ReadLine()??""); //вводим размер массива
 string[] array = InitArray(num);
+
 PrintArray(array);
+int count = SimvolArray(array);
 Console.Write(" -> ");
-FinalArray(array);
+PrintArray(FinalArray(array, count));
 
