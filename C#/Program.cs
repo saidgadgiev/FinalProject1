@@ -1,4 +1,4 @@
-/*
+﻿/*
 Задача: 
 Написать программу, которая из имеющегося массива строк формирует массив из строк, 
 длина которых меньше либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, 
@@ -70,9 +70,11 @@ String[] FinalArray(string[] array, int num)
 Console.Write("Укажите длинну массива?? -> ");
 int num  = int.Parse(Console.ReadLine()??""); //вводим размер массива
 string[] array = InitArray(num);
-
+Console.WriteLine("--------------------------------");
 PrintArray(array);
 int count = SimvolArray(array);
-Console.Write(" -> ");
+Console.Write(" -> результат -> ");
 PrintArray(FinalArray(array, count));
+Console.WriteLine();
+Console.WriteLine("--------------------------------");
 
